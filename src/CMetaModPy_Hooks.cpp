@@ -24,7 +24,6 @@
  * Created on April 15, 2010, 1:03 AM
  **/
 
-#include "metamod.h"
 #include "CMetaModPy.h"
 
 /**
@@ -33,3 +32,4 @@
 void InitializeHooks()
 {
 }
+
