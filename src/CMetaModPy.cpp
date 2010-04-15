@@ -51,7 +51,7 @@ PLUGIN_EXPOSE(CMetaModPy, g_MetaModPy);
  **/
 bool CMetaModPy::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late)
 {
-    char directoryBuffer[MAXIMUM_PATH_LENGTH];
+    char *directoryBuffer = new char[MAXIMUM_PATH_LENGTH];
     PyObject *loaderModule;
 
     PLUGIN_SAVEVARS();
@@ -71,6 +71,9 @@ bool CMetaModPy::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bo
 
     g_SMAPI->PathFormat(directoryBuffer, MAXIMUM_PATH_LENGTH, "%s/%s", directoryBuffer, "plugins");
     setenv("PYTHONPATH", directoryBuffer, 1);
+
+    // We don't need this any more.
+    delete directoryBuffer;
 
     // Create our initialize the Python subsystem
     g_pythonManager = new CPythonManager();
