@@ -143,7 +143,7 @@ const char *CMetaModPy::GetLogTag()
 
 const char *CMetaModPy::GetAuthor()
 {
-	return "Monokromatic, Inc.";
+	return "Brandon \"monokrome\" Stoner";
 }
 
 const char *CMetaModPy::GetDescription()
